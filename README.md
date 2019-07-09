@@ -3,3 +3,6 @@
 # test-external-ci
 This project is used to test the integration of GitLab CI with
 [LabHub](https://github.com/brndnmtthws/labhub).
+
+The corresponding project can be found in
+[gitlab.com](https://gitlab.com/hzdr/test-external-ci).
