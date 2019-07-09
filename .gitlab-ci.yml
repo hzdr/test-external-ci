@@ -1,5 +1,4 @@
-build:gcclatest:
-  image: gcc:latest
+.build: &build
   stage: build
   script:
     - g++ src/helloworld.cpp -o helloWorld
@@ -7,9 +6,27 @@ build:gcclatest:
     paths:
       - helloWorld
 
-test:gcclatest:
-  image: gcc:latest
+.test: &test
+  stage: test
   script:
     - ./helloWorld
+
+build:gcc:latest:
+  image: gcc:latest
+  <<: *build
+
+build:gcc:8:
+  image: gcc:8
+  <<: *build
+  
+test:gcc:latest:
+  image: gcc:latest
+  <<: *test
   dependencies:
-    - build:gcclatest
+    - build:gcc:latest
+
+test:gcc:8:
+  image: gcc:8
+  <<: *test
+  dependencies:
+    - build:gcc:8
