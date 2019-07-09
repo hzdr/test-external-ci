@@ -1,3 +1,15 @@
-hello-world:
+build:gcclatest:
+  image: gcc:latest
+  stage: build
   script:
-    - echo "Hello World"
+    - g++ src/helloworld.cpp -o helloWorld
+  artifacts:
+    paths:
+      - helloWorld
+
+test:gcclatest:
+  image: gcc:latest
+  script:
+    - ./helloWorld
+  dependencies:
+    - build:gcclatest
