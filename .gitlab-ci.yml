@@ -18,6 +18,10 @@ build:gcc:latest:
 build:gcc:8:
   image: gcc:8
   <<: *build
+
+build:gcc:7:
+  image: gcc:7
+  <<: *build
   
 test:gcc:latest:
   image: gcc:latest
@@ -30,3 +34,9 @@ test:gcc:8:
   <<: *test
   dependencies:
     - build:gcc:8
+
+test:gcc:7:
+  image: gcc:7
+  <<: *test
+  dependencies:
+    - build:gcc:7
