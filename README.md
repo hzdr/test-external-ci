@@ -6,3 +6,5 @@ This project is used to test the integration of GitLab CI with
 
 The corresponding project can be found in
 [gitlab.com](https://gitlab.com/hzdr/test-external-ci).
+
+Best change ever!!!
